@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Cat } from 'src/app/cat';
+import { CatDialogComponent } from 'src/app/cat-dialog/cat-dialog.component';
 
 @Component({
   selector: 'app-card',
@@ -15,9 +17,11 @@ export class CardComponent implements OnInit {
     breeds: [{}],
   };
 
-  openCard: boolean = false;
-
-  constructor() {}
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {}
+
+  openDialog() {
+    this.dialog.open(CatDialogComponent, { data: this.cat });
+  }
 }

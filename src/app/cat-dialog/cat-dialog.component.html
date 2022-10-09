@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>{{ data?.breeds[0]?.name }}</h1>
+<div mat-dialog-content class="content">
+  <img [src]="data.url" class="image" alt="" />
+  <div *ngIf="data?.breeds.length !== 0; else noData">
+    <p><strong>Origin: </strong>{{ data?.breeds[0]?.origin }}</p>
+    <p><strong>Life span: </strong> {{ data?.breeds[0]?.life_span }}</p>
+  </div>
+  <ng-template #noData>
+    <p><strong>Breeds: </strong>No data</p>
+    <p><strong>Origin: </strong>No data</p>
+    <p><strong>Life span: </strong> No data</p></ng-template
+  >
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+  </div>
+</div>
