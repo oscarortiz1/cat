@@ -11,6 +11,9 @@ import { CardComponent } from './services/card/card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CatDialogComponent } from './cat-dialog/cat-dialog.component';
+import { CatCategorieComponent } from './cat-categorie/cat-categorie.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +22,7 @@ import { CatDialogComponent } from './cat-dialog/cat-dialog.component';
     CatListComponent,
     CardComponent,
     CatDialogComponent,
+    CatCategorieComponent,
   ],
   imports: [
     BrowserModule,
