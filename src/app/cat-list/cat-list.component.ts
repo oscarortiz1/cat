@@ -10,26 +10,57 @@ import { CatServicesService } from '../services/cat-services.service';
 export class CatListComponent implements OnInit {
   catList = [];
   breedList = [];
-  breedListSelect: string = 'beng';
+  origin = [];
+  breedListSelect: string = '';
+  page: number = 0;
+  loading: boolean = false;
 
   constructor(private catServices: CatServicesService) {}
 
   ngOnInit(): void {
-    this.catServices.getBreeds().subscribe((data: Array<object>) => {
-      this.breedList = data;
-    });
-    this.catServices
-      .getCatList(this.breedListSelect)
-      .subscribe((data: Array<object>) => {
-        this.catList = data;
+    this.loading = true;
+    try {
+      this.catServices.getBreeds().subscribe((data: Array<object>) => {
+        this.breedList = data;
       });
+      this.catServices
+        .getCatList(this.breedListSelect, this.page)
+        .subscribe((data: Array<object>) => {
+          this.catList = data;
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  addMoreCats() {
+    this.page++;
+    this.loading = true;
+    try {
+      this.catServices
+        .getCatList(this.breedListSelect, this.page)
+        .subscribe((data: Array<object>) => {
+          this.catList = [...this.catList, ...data];
+        });
+    } catch (error) {
+      console.log(error);
+    } finally {
+      this.loading = false;
+    }
   }
 
   onChangeCatList() {
-    this.catServices
-      .getCatList(this.breedListSelect)
-      .subscribe((data: Array<object>) => {
-        this.catList = data;
-      });
+    this.loading = true;
+    try {
+      this.catServices
+        .getCatList(this.breedListSelect, this.page)
+        .subscribe((data: Array<object>) => {
+          this.catList = data;
+        });
+    } catch (error) {
+      console.log(error);
+    } finally {
+      this.loading = false;
+    }
   }
 }

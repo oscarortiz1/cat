@@ -14,12 +14,13 @@ export class CatServicesService {
     return this.http.get(`${this.baseURL}/breeds`);
   }
 
-  getCatList(breedListSelect) {
+  getCatList(breedListSelect, page) {
     return this.http.get(this.baseURL + '/images/search', {
       headers: {
         'x-api-key': this.key,
       },
       params: {
+        page: page,
         limit: '15',
         breed_ids: breedListSelect,
       },

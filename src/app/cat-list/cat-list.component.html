@@ -2,17 +2,34 @@
   <h2>Cat List</h2>
   <label for="catName">Breed:</label>
   <input
+    placeholder="Select a breed"
     id="catName"
     list="breed"
     [(ngModel)]="breedListSelect"
     (change)="onChangeCatList()"
-  />
+  /><!-- 
+  <div class="loader" *ngIf="loading"></div> -->
+
   <datalist id="breed">
     <option *ngFor="let item of breedList" [value]="item.id">
       {{ item.name }}
     </option>
   </datalist>
-  <div class="grid">
+
+  <label for="catOrigin">Origin and name:</label>
+  <select
+    id="catOrigin"
+    [(ngModel)]="breedListSelect"
+    (change)="onChangeCatList()"
+  >
+    <option value="">Please Choose</option>
+    <option *ngFor="let item of breedList" [value]="item.id">
+      {{ item.origin }} - {{ item.name }}
+    </option>
+  </select>
+
+  <div class="grid" #grid>
     <app-card [cat]="item" *ngFor="let item of catList"></app-card>
   </div>
+  <button (click)="addMoreCats()">See More</button>
 </section>

@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" (click)="onClickModal()">
   <img [src]="cat.url" alt="cat-image" />
   <div *ngIf="cat?.breeds.length !== 0; else noData">
     <p><strong>Breeds: </strong>{{ cat?.breeds[0]?.name }}</p>
@@ -7,3 +7,5 @@
   </div>
   <ng-template #noData><p>No data :c</p> </ng-template>
 </div>
+
+<div class="card-content" *ngIf="openCard">hola</div>

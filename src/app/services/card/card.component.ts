@@ -15,7 +15,13 @@ export class CardComponent implements OnInit {
     breeds: [{}],
   };
 
+  openCard: boolean = false;
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  onClickModal() {
+    this.openCard = !this.openCard;
+  }
 }
