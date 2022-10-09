@@ -1,0 +1,20 @@
+section {
+  margin: 2rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  place-content: center;
+  grid-gap: 1rem;
+}
+.grid > div {
+  background-color: aqua;
+  width: 100%;
+  height: 200px;
+}
+
+@media screen and (max-width: 768px) {
+  section {
+    width: 90vw;
+  }
+}

@@ -1,0 +1,10 @@
+section{
+  width: 100vw;
+}
+
+.main-section {
+  display: grid;
+  grid-template-columns: 0.5fr 3fr;
+  width: 100vw;
+}
+

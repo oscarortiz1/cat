@@ -1,0 +1,23 @@
+section {
+  display: flex;
+  width: 100vw;
+  height: 80px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 0 0 20px 20px;
+}
+
+.header-sections,
+.category {
+  display: flex;
+  align-items: center;
+}
+
+.header-sections > p {
+  font-style: italic;
+  margin-left: 10px;
+}
+img,
+a {
+  width: 100px;
+  height: 70px;
+}

@@ -1,0 +1,33 @@
+section {
+  display: fixed;
+  margin-top: 2rem;
+  width: 150px;
+  padding: 20px;
+  border-right: 1px solid black;
+  height: 75vh;
+}
+ul,
+li {
+  text-decoration: inherit;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  margin: 0.5rem 0;
+}
+a {
+  text-decoration: inherit;
+  color: black;
+  padding: 0;
+}
+a:hover {
+  color: DarkOrange;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  section {
+    display: none;
+  }
+}
