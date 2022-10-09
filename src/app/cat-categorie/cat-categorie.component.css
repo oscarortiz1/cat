@@ -1,7 +1,14 @@
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  place-content: center;
-  grid-gap: 3rem;
-  margin: auto 1rem;
+.photos {
+  column-count: 3;
+}
+.photos img {
+  width: 100%;
+  height: auto;
+
+  filter: contrast(100%);
+  transition: all 0.2s ease-in-out;
+}
+
+.photos img:hover {
+  filter: contrast(125%);
 }

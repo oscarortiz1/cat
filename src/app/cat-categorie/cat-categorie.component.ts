@@ -8,8 +8,9 @@ import { CatServicesService } from '../services/cat-services.service';
 })
 export class CatCategorieComponent implements OnInit {
   catList: any = [];
-  constructor(private catServices: CatServicesService) {}
+  page: number = 1;
   counter: any = 5;
+  constructor(private catServices: CatServicesService) {}
   ngOnInit(): void {
     this.catServices.categoryId$.subscribe((data) => {
       if (data !== 0) {
