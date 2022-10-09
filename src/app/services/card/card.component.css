@@ -1,0 +1,18 @@
+div {
+  width: 100%;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px;
+  max-width: 300px;
+}
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+div:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}

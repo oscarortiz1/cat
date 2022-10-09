@@ -1,13 +1,15 @@
 <section>
+  <input
+    list="breed"
+    [(ngModel)]="breedListSelect"
+    (change)="onChangeCatList()"
+  />
+  <datalist id="breed">
+    <option *ngFor="let item of breedList" [value]="item.id">
+      {{ item.name }}
+    </option>
+  </datalist>
   <div class="grid">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
+    <app-card [cat]="item" *ngFor="let item of catList"></app-card>
   </div>
 </section>
