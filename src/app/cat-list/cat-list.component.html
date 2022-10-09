@@ -1,5 +1,8 @@
 <section>
+  <h2>Cat List</h2>
+  <label for="catName">Breed:</label>
   <input
+    id="catName"
     list="breed"
     [(ngModel)]="breedListSelect"
     (change)="onChangeCatList()"

@@ -22,14 +22,10 @@ export class CatListComponent implements OnInit {
       .getCatList(this.breedListSelect)
       .subscribe((data: Array<object>) => {
         this.catList = data;
-        console.log(this.catList);
-        console.log(this.breedList);
       });
   }
 
   onChangeCatList() {
-    console.log(this.breedListSelect);
-
     this.catServices
       .getCatList(this.breedListSelect)
       .subscribe((data: Array<object>) => {
