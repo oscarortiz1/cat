@@ -9,7 +9,6 @@ export class CatServicesService {
   baseURL: string = 'https://api.thecatapi.com/v1';
   key = 'live_w5m563XBhmdfD3l8lPDDIyB0ZJqYhfBu6NnlpVuOdqivDB0UdN9lXsLtWH3SQP4o';
   private categoryId = new BehaviorSubject<any>('');
-  count: any = 0;
   categoryId$ = this.categoryId.asObservable();
 
   constructor(private http: HttpClient) {}
@@ -44,6 +43,10 @@ export class CatServicesService {
   }
 
   getCatListCategory(id: any) {
+    if (id === '') {
+      id = 5;
+    }
+
     return this.http.get(this.baseURL + '/images/search', {
       headers: {
         'x-api-key': this.key,

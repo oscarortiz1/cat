@@ -1,5 +1,6 @@
-
-<p>counter: {{counter}}</p>
+<h1>
+  {{ catList[0]?.categories[0]?.name | uppercase }}
+</h1>
 <div class="grid" #grid>
   <app-card [cat]="item" *ngFor="let item of catList"></app-card>
 </div>

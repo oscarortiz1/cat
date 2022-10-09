@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CatServicesService } from '../services/cat-services.service';
 
 @Component({
@@ -7,12 +7,14 @@ import { CatServicesService } from '../services/cat-services.service';
   styleUrls: ['./cat-categorie.component.css'],
 })
 export class CatCategorieComponent implements OnInit {
-  catList = [];
+  catList: any = [];
   constructor(private catServices: CatServicesService) {}
-  counter: any = 0;
+  counter: any = 5;
   ngOnInit(): void {
     this.catServices.categoryId$.subscribe((data) => {
-      this.counter = data;
+      if (data !== 0) {
+        this.counter = data;
+      }
       this.catServices
         .getCatListCategory(this.counter)
         .subscribe((data: Array<object>) => {
