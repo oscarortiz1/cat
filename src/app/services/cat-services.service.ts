@@ -26,4 +26,12 @@ export class CatServicesService {
       },
     });
   }
+
+  getCatCategories() {
+    return this.http.get(`${this.baseURL}/categories`, {
+      headers: {
+        'x-api-key': this.key,
+      },
+    });
+  }
 }

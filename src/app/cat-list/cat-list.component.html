@@ -30,9 +30,7 @@
   <div class="loader" *ngIf="loading"></div>
 
   <div class="grid" #grid>
-    <app-card [cat]="item" *ngFor="let item of catList" ></app-card>
+    <app-card [cat]="item" *ngFor="let item of catList"></app-card>
   </div>
   <button (click)="addMoreCats()">See More</button>
 </section>
-
-

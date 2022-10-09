@@ -42,11 +42,10 @@ export class CatListComponent implements OnInit {
         .getCatList(this.breedListSelect, this.page)
         .subscribe((data: Array<object>) => {
           this.catList = [...this.catList, ...data];
+          this.loading = false;
         });
     } catch (error) {
       console.log(error);
-    } finally {
-      this.loading = false;
     }
   }
 
@@ -57,11 +56,10 @@ export class CatListComponent implements OnInit {
         .getCatList(this.breedListSelect, this.page)
         .subscribe((data: Array<object>) => {
           this.catList = data;
+          this.loading = false;
         });
     } catch (error) {
       console.log(error);
-    } finally {
-      this.loading = false;
     }
   }
 }

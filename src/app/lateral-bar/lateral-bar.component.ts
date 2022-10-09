@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CatServicesService } from '../services/cat-services.service';
 
 @Component({
   selector: 'app-lateral-bar',
@@ -6,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lateral-bar.component.css'],
 })
 export class LateralBarComponent implements OnInit {
-  categories: Array<string> = ['/category1', '/category2', '/category3'];
+  categories: Array<object> = [];
 
-  constructor() {}
+  constructor(private catServices: CatServicesService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.catServices.getCatCategories().subscribe((data: Array<object>) => {
+      this.categories = data;
+    });
+  }
 }
