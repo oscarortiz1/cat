@@ -2,14 +2,22 @@
 <div mat-dialog-content class="content">
   <img [src]="data.url" class="image" alt="" />
   <div *ngIf="data?.breeds.length !== 0; else noData">
+    <p><strong> Description:</strong> {{ data?.breeds[0]?.description }}</p>
     <p><strong>Origin: </strong>{{ data?.breeds[0]?.origin }}</p>
     <p><strong>Life span: </strong> {{ data?.breeds[0]?.life_span }}</p>
+    <p>
+      <strong>Child Friendly: </strong>{{ data?.breeds[0]?.child_friendly }}
+    </p>
+    <p><strong>Temperament: </strong>{{ data?.breeds[0]?.temperament }}</p>
   </div>
   <ng-template #noData>
+    <p><strong> Description:</strong> No data</p>
     <p><strong>Breeds: </strong>No data</p>
     <p><strong>Origin: </strong>No data</p>
-    <p><strong>Life span: </strong> No data</p></ng-template
-  >
+    <p><strong>Life span: </strong> No data</p>
+    <p><strong>Child Friendly</strong>No data</p>
+    <p><strong>Temperament: </strong>No data</p>
+  </ng-template>
   <div mat-dialog-actions>
     <button mat-button mat-dialog-close>Close</button>
   </div>
