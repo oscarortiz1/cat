@@ -1,1 +1,5 @@
-<p>cat-categorie works!</p>
+
+<p>counter: {{counter}}</p>
+<div class="grid" #grid>
+  <app-card [cat]="item" *ngFor="let item of catList"></app-card>
+</div>

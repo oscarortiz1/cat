@@ -1,9 +1,10 @@
 <section>
   <div>
+    <a href="/" class="home">HOME</a>
     <h2>Categories</h2>
     <ul>
       <li *ngFor="let item of categories">
-        <a href="/">{{ item?.name }}</a>
+        <a (click)="addCateroryId(item?.id)">{{ item?.name }}</a>
       </li>
     </ul>
   </div>
