@@ -11,7 +11,7 @@ export class CatListComponent implements OnInit {
   catList = [];
   breedList = [];
   origin = [];
-  breedListSelect: string = '';
+  breedListSelect: string = 'abys';
   page: number = 0;
   loading: boolean = false;
 
